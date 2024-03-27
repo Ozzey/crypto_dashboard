@@ -1,41 +1,65 @@
-.login-container {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 50px 20px;
+
+body {
+    background:#03040e;
+    color:#fff;
+    width:100%;
+    font-family:"Montserrat", sans-serif;
 }
 
-.login-form {
+/* register.css */
+.register-page {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 120px); /* Assuming header and footer heights total to 120px */
 }
 
-.form-group {
+.form-container {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px; /* Set a max-width if you want to limit how wide the form can get */
+    margin: auto; /* This will center the div if it has a max-width */
+}
+
+
+.form-section {
+    margin: 0 20px; /* Adds horizontal margin to each form section */
+}
+
+
+/* Add any additional styles you need for the register page here */
+form {
+    background: #12151a; /* Lighter shade */
+    border-radius: 5px;
+    width: 300px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+p {
     margin-bottom: 20px;
 }
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.form-group input {
+input, button {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
 }
-
-.btn-login {
-    padding: 10px 20px;
-    background-color: #2894ff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.form-error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
 }
-
-.btn-login:hover {
-    background-color: #1a78d7;
+a {
+    color: #edf0f1;
+    text-decoration: none;
+    display: block; /* Make it take the full width */
+    text-align: center; /* Center the text */
+    margin-top: 20px; /* Space from the submit button */
+}
+a:hover {
+    color: rgba(200,216,199,1);
 }

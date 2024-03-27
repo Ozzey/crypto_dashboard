@@ -1,74 +1,18 @@
-<html>
+{% extends "base.html" %}
+
+{% block content %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/index.css') }}">
 <link rel="icon" href="{{ url_for('static', filename='images/logo2.png') }}" type="image/x-icon">
-<html lang="en">
-<head>
+
+
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/nav.css') }}">
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>CRYPTO STONKS</title>
-</head>
-<body>
-<header>
-    <a class='cta' href="{{url_for('main')}}">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <center>
-            <img class="logo" src="/static/images/logo2.png">
-            Home
+{% endblock %}
 
-        </center>
-    </a>
-    <nav>
-        <ul class="nav_links" style="white-space:nowrap;">
-            <li><a href="">Crypto Charts</a></li>
-            <li><a href="">News</a></li>
-            <li><a href="">Services</a></li>
-            <li><a href=""">Portfolio</a></li>
-            <li><a href="">Learn</a></li>
-        </ul>
-    </nav>
-    <a class="cta" href="/login">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Login
-    </a>
-</header>
-<hr/>
-<!--TICKER TAPE START-->
-<div class="tickertape-container" style="background-color:#050612">
-    <div class="tickertape-container__widget"></div>
-    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
-            async>
-        {
-        "symbols": [
-          {"proName": "BITSTAMP:BTCUSD",
-            "title": "BTC/USD"},
-          {"proName": "BITSTAMP:ETHUSD",
-            "title": "ETH/USD"},
-          {"description": "ADA/USDT",
-            "proName": "BINANCE:ADAUSDT"},
-          {"description": "MATIC/USDT",
-            "proName": "BINANCE:MATICUSDT"},
-          {"description": "BNB/USD",
-            "proName": "BINANCE:BNBUSD"}
-        ],
-        "showSymbolLogo": true,
-        "colorTheme": "dark",
-        "isTransparent": true,
-        "displayMode": "adaptive",
-        "locale": "en"
-      }
+{% block body %}
 
-
-    </script>
-</div>
-<!--TICKER TAPE ENDS-->
-<hr/>
 <div class="table-container" style="padding:0px 20px;">
     <table class="table">
         <thead>
@@ -221,10 +165,8 @@
     </table>
 </div>
 
-<script>
-         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js">
-
-
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js">
 </script>
-</body>
-</html>
+
+
+{% endblock %}

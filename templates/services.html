@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<title>SERVICES</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/login.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="register-page">
+<div class="form-container" style="display: flex; justify-content: space-around;">
+    <!-- Add 'form-section' class for styling -->
+    <div class="form-section">
+        <form action="{{ url_for('services') }}" method="post">
+            {{ buy_form.hidden_tag() }}
+            <div>
+                {{ buy_form.ticker.label }}<br>
+                {{ buy_form.ticker(size=32) }}
+            </div>
+            <div>
+                {{ buy_form.amount.label }}<br>
+                {{ buy_form.amount(size=32) }}
+            </div>
+            <div>
+                {{ buy_form.price.label }}<br>
+                {{ buy_form.price(size=32) }}
+            </div>
+            <div>
+                {{ buy_form.submit() }}
+            </div>
+        </form>
+    </div>
+    <!-- Add 'form-section' class for styling -->
+    <div class="form-section">
+        <form action="{{ url_for('services') }}" method="post">
+            {{ sell_form.hidden_tag() }}
+            <div>
+                {{ sell_form.ticker.label }}<br>
+                {{ sell_form.ticker(size=32) }}
+            </div>
+            <div>
+                {{ sell_form.amount.label }}<br>
+                {{ sell_form.amount(size=32) }}
+            </div>
+            <!-- Omit price for selling if not needed -->
+            <div>
+                {{ sell_form.submit() }}
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+{% endblock %}
+
