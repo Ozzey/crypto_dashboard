@@ -14,9 +14,53 @@ Welcome to the Crypto Currency Dashboard, a comprehensive web application design
 
 - **Frontend:** HTML, CSS, JavaScript (with frameworks/libraries as applicable)
 - **Backend:** Python-Flask
-- **Database:** MongoDB - for storing user data and portfolio information securely.
+- **Database:** SQLite - for storing user data and portfolio information securely.
 - **APIs:**
   - **TradingView API:** For embedding advanced financial charts and widgets.
   - **Coingecko API:** For fetching real-time cryptocurrency data, including OHLC, volume, and market cap.
 
 ## Getting Started
+
+
+
+---
+
+## Docker Setup
+
+To simplify the setup process and ensure a consistent environment across different machines, we've dockerized the Crypto Currency Dashboard application. Follow the steps below to build and run the Docker image.
+
+### Prerequisites
+
+Ensure you have Docker installed on your machine. If you haven't installed Docker yet, follow the instructions on the [official Docker documentation](https://docs.docker.com/get-docker/) to set it up for your operating system.
+
+### Building the Docker Image
+
+1. Open a terminal or command prompt.
+2. Navigate to the root directory of the Crypto Currency Dashboard project.
+3. Build the Docker image by running the following command:
+
+```shell
+docker build -t crypto_dashboard .
+```
+
+This command reads the `Dockerfile` in the project's root directory and builds a Docker image named `crypto_dashboard`.
+
+### Running the Docker Container
+
+Once the image has been built, you can run the application inside a Docker container using the following command:
+
+```shell
+docker run -p 5000:5000 crypto_dashboard
+```
+
+This command starts a container based on the `crypto_dashboard` image, mapping port 5000 of the container to port 5000 on your host machine.
+
+### Accessing the Application
+
+After the container starts, you can access the Crypto Currency Dashboard web application by navigating to `http://localhost:5000` in your web browser.
+
+### Stopping the Container
+
+To stop the running Docker container, you can press `Ctrl+C` in the terminal where the container is running. Alternatively, you can find the container ID using `docker ps` and then stop it using `docker stop <container_id>`.
+
+---
