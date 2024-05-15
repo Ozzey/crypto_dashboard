@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<title>PORTFOLIO</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/index.css') }}">
+{% endblock %}
+
+{% block body %}
+<hr/>
+<div class="table-container" style="padding:0px 20px;">
+    <table class="table">
+        <div class="flex-container">
+        <thead>
+        <tr align="right" style="white-space:nowrap;">
+            <th></th>
+            <th>Coin</th>
+            <th>Amount</th>
+            <th>Price $</th>
+        </tr>
+        </thead>
+        <tbody>
+            <!-- Dynamic Table Rows -->
+            {% for entry in data %}
+            <tr align="right" style="white-space:nowrap;", class="row">
+                <td></td>
+                <td>{{ entry.ticker }}</td>
+                <td>{{ entry.amount }}</td>
+                <td>{{ entry.price|round(2) }} $</td>
+            </tr>
+            {% endfor %}
+        </div>
+        </tbody>
+    </table>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js">
+</script>
+
+{% endblock %}

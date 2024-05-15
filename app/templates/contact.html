@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<title>CONTACTS</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/contact.css') }}">
+{% endblock %}
+
+
+{% block body %}
+<div class="content-area">
+    <div class="social-box">
+        <h2>Contact Us</h2>
+        <span></span>
+        
+        <div class="social-links">
+            <a class="cta row" href="{{url_for('login')}}">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                GITHUB
+            </a>
+            <a class="cta row" href="{{url_for('login')}}">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                TELEGRAM
+            </a>
+            <a class="cta row" href="{{url_for('login')}}">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                LINKEDIN
+            </a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

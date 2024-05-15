@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crypto-dashboard-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: crypto-dashboard
+  template:
+    metadata:
+      labels:
+        app: crypto-dashboard
+    spec:
+      containers:
+      - name: crypto-dashboard
+        image: crypto-dashboard:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: crypto-dashboard-service
+spec:
+  type: NodePort
+  ports:
+    - port: 5000
+      targetPort: 5000
+      nodePort: 30000
+  selector:
+    app: crypto-dashboard
