@@ -72,10 +72,10 @@ To stop the running Docker container, you can press `Ctrl+C` in the terminal whe
 ### Configuration:
 
 **deployment.yaml :** Contains configuration for deployment.  
-**ingress.yaml :** Used to create an entrypoint. I am using it with nginx for limiting the number of requests.
+**ingress.yaml :** Used to create an entrypoint. I am using it with nginx for limiting the number of requests.  
 **hpa.yaml :** For autoscaling with min replicas = 1 and max = 10.  
-**persistent-volume.yaml :** For persistence storage.
-**presistent-volume-claim.yaml :** For specific user volume requests.
+**persistent-volume.yaml :** For persistence storage.  
+**presistent-volume-claim.yaml :** For specific user volume requests.  
 
 ### Deployment:
 To deploy the flask app using kubernetes cluster use:
