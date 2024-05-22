@@ -1,5 +1,7 @@
 # Crypto Currency Dashboard Web Application
 
+![image](https://github.com/Ozzey/crypto_dashboard/assets/49760167/906ec3fd-1a0b-44f5-b271-f5964a104754)
+
 Welcome to the Crypto Currency Dashboard, a comprehensive web application designed for cryptocurrency enthusiasts and investors. This platform offers a rich set of features that allow users to track their portfolio, analyze market trends, and gain insights into the sentiments surrounding various cryptocurrencies. Utilizing the power of TradingView API for advanced charting and widgets, along with the Coingecko API for accurate and up-to-date OHLC (Open, High, Low, Close) data, our dashboard delivers a seamless and informative experience.
 
 ## Features
@@ -64,3 +66,24 @@ After the container starts, you can access the Crypto Currency Dashboard web app
 To stop the running Docker container, you can press `Ctrl+C` in the terminal where the container is running. Alternatively, you can find the container ID using `docker ps` and then stop it using `docker stop <container_id>`.
 
 ---
+
+## Kubernetes Setup
+
+### Configuration:
+
+**deployment.yaml :** Contains configuration for deployment.  
+**ingress.yaml :** Used to create an entrypoint. I am using it with nginx for limiting the number of requests.
+**hpa.yaml :** For autoscaling with min replicas = 1 and max = 10.  
+**persistent-volume.yaml :** For persistence storage.
+**presistent-volume-claim.yaml :** For specific user volume requests.
+
+### Deployment:
+To deploy the flask app using kubernetes cluster use:
+```
+kubectl apply -f kubernetes/
+```
+
+
+## Live
+
+The website is hosted on my local ubuntu server and uses heroku as proxy server: [Crypto-Stonks](https://crypto-stonks-c03d4c6f7119.herokuapp.com/news)
