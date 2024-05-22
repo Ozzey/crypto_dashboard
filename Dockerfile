@@ -11,12 +11,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the current directory contents into the container at /usr/src/app
 COPY . .
 
-# Make port 5000 available to the world outside this container
-EXPOSE 5000
-
 # Define environment variable
 ENV FLASK_APP=app/main.py
 ENV FLASK_RUN_HOST=0.0.0.0
 
-# Run app.py when the container launches
-CMD ["flask", "run"]
+# Run the application using Gunicorn on the Heroku assigned port
+CMD gunicorn --bind 0.0.0.0:$PORT app.main:main
+

@@ -18,16 +18,10 @@ spec:
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5000
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: crypto-dashboard-service
-spec:
-  type: NodePort
-  ports:
-    - port: 5000
-      targetPort: 5000
-      nodePort: 30000
-  selector:
-    app: crypto-dashboard
+        volumeMounts:
+        - name: db-storage
+          mountPath: /usr/src/app/database
+      volumes:
+      - name: db-storage
+        persistentVolumeClaim:
+          claimName: crypto-dashboard-pvc
